@@ -55,3 +55,10 @@ ON FEB.orderid=cust.order_id
 WHERE Feb.Quantity>2
 AND length(orderid) = 6 
 AND orderid <> 'Order ID'
+
+#8. How many products sold in February in Los Angeles and how many of each?
+select product, sum(quantity)
+from BIT_DB.febsales
+where location like '%Los Angeles%'
+Group by Product
+
