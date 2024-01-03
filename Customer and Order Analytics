@@ -77,4 +77,12 @@ from BIT_DB.febsales
 where product like'%Headphones%'
 Group by Product
 
+#11. What was the average amount spent per account in February
+select avg(quantity*price)
+from BIT_DB.febsales Feb
+left join BIT_DB.customers cust
+on FEB.orderid=cust.order_id
+where length(orderid)=6
+and orderid <> 'Order ID'
+
 
