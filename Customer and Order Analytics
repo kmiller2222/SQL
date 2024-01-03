@@ -71,3 +71,10 @@ and orderid<>'Order ID'
 Group by location
 Having count(OrderID)>2
 
+#10. How many of each type of Headphones were sold in February
+select sum(quantity) as quantity, Product
+from BIT_DB.febsales
+where product like'%Headphones%'
+Group by Product
+
+
