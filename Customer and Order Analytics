@@ -62,3 +62,12 @@ from BIT_DB.febsales
 where location like '%Los Angeles%'
 Group by Product
 
+#9. Which locations in New York received at least 3 orders in January and how many of each
+select distinct location, count(OrderID)
+from BIT_DB.JanSales
+where location like '%NY%'
+and length(orderid)=6
+and orderid<>'Order ID'
+Group by location
+Having count(OrderID)>2
+
